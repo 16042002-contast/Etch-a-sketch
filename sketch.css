@@ -3,13 +3,17 @@
 body{
     padding: 0px;
     background-color: black;
+    display: flex;
+    justify-content: center;
+
 }
 
 .container{
     display: flex;
     flex-wrap: wrap;
     flex-direction:column ;
-    width: auto;
+    width: 960px;
+    height: 960px;
 }
 
 .userInput{
@@ -55,14 +59,16 @@ body{
 
 .row{
     display: flex;
+    flex: 1;
 }
 
 
 .lil-div{
-    height: 80px;
     
-    border: 1px solid yellow;
+    
+    background-color: white;
     flex: 1;
+
     
 }
 

@@ -1,6 +1,7 @@
 let container = document.querySelector('.container');
 
 
+
 let btn = document.querySelector('.btn');
 btn.addEventListener('click',()=>{
     let length = document.querySelector('#length').value;
@@ -14,6 +15,7 @@ function createRow(length) {
     div.classList.add('row');
     for (let i = 1; i <=length; i++) {
         let box = document.createElement('div');
+
         box.classList.add('lil-div');
         div.appendChild(box);
         
@@ -32,26 +34,37 @@ function createGrid(length,breadth) {
     draw();
 }
 
-function draw() {
-    let allBox = document.querySelectorAll('.lil-div');
-    allBox.forEach(box=>{
-        box.addEventListener('mouseover',(e)=>{
-            let color1 = Math.ceil(Math.random()*255);
+
+
+function rainbow() {
+    let color1 = Math.ceil(Math.random()*255);
             let color2 = Math.ceil(Math.random()*255);
             let color3 = Math.ceil(Math.random()*255);
             
             let tcolor = `rgb(${color1},${color2},${color3})`;
-            box.style.backgroundColor = tcolor;
-           
-            
-          
-               
-        })
-    })
+            return tcolor;
+    
 }
 
 
 
+function draw() {
+    let flag ;
+    let allBox = document.querySelectorAll('.lil-div');
+    allBox.forEach(box=>{
+        box.addEventListener('mouseover',function fill(e){
+            flag = true;
+            console.log(flag);
+            let tcolor = rainbow();
+            box.style.backgroundColor = tcolor;
+            
+          
+        });
+    })
+
+
+    
+}
 
 
 
